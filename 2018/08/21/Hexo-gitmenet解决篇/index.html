@@ -5,15 +5,25 @@
   
 
   
-  <title>Xserena的博客</title>
+  <title>Hexo gitmenet解决篇 | Xserena的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Xserena的博客">
-<meta property="og:url" content="https://xserena.github.io/my-blog/index.html">
+  <meta name="description" content="本来建了基于Hexo+GitHub+Gitment的博客，小编用的landscape主题，但是gitment总出问题，提示Error: Not Found，原来是OAuth Application注册就有问题了，接下来小编就一步一步还原我的解决方案1. 注册 OAuth Application">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo gitmenet解决篇">
+<meta property="og:url" content="https://xserena.github.io/my-blog/2018/08/21/Hexo-gitmenet解决篇/index.html">
 <meta property="og:site_name" content="Xserena的博客">
+<meta property="og:description" content="本来建了基于Hexo+GitHub+Gitment的博客，小编用的landscape主题，但是gitment总出问题，提示Error: Not Found，原来是OAuth Application注册就有问题了，接下来小编就一步一步还原我的解决方案1. 注册 OAuth Application">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://xserena.github.io/my-blog/2018/08/21/Hexo-gitmenet解决篇/zhuce.png">
+<meta property="og:image" content="https://xserena.github.io/my-blog/2018/08/21/Hexo-gitmenet解决篇/new.png">
+<meta property="og:image" content="https://xserena.github.io/my-blog/2018/08/21/Hexo-gitmenet解决篇/git.png">
+<meta property="og:image" content="https://xserena.github.io/my-blog/2018/08/21/Hexo-gitmenet解决篇/添加.png">
+<meta property="og:image" content="https://xserena.github.io/my-blog/2018/08/21/Hexo-gitmenet解决篇/not.png">
+<meta property="og:updated_time" content="2018-08-21T11:43:53.177Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Xserena的博客">
+<meta name="twitter:title" content="Hexo gitmenet解决篇">
+<meta name="twitter:description" content="本来建了基于Hexo+GitHub+Gitment的博客，小编用的landscape主题，但是gitment总出问题，提示Error: Not Found，原来是OAuth Application注册就有问题了，接下来小编就一步一步还原我的解决方案1. 注册 OAuth Application">
+<meta name="twitter:image" content="https://xserena.github.io/my-blog/2018/08/21/Hexo-gitmenet解决篇/zhuce.png">
   
   
     <link rel="icon" href="/favicon.png">
@@ -56,9 +66,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-Hexo-gitmenet解决篇" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Hexo-gitmenet解决篇" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/my-blog/2018/08/21/Hexo-gitmenet解决篇/" class="article-date">
   <time datetime="2018-08-21T10:55:04.000Z" itemprop="datePublished">2018-08-21</time>
@@ -71,8 +79,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/my-blog/2018/08/21/Hexo-gitmenet解决篇/">Hexo gitmenet解决篇</a>
+    <h1 class="article-title" itemprop="name">
+      Hexo gitmenet解决篇
     </h1>
   
 
@@ -80,12 +88,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p></p><h2>本来建了基于Hexo+GitHub+Gitment的博客，小编用的landscape主题，但是gitment总出问题，提示Error: Not Found，原来是OAuth Application注册就有问题了，接下来小编就一步一步还原我的解决方案</h2><h3>1. 注册 OAuth Application</h3>
-        
-          <p class="article-more-link">
-            <a href="/my-blog/2018/08/21/Hexo-gitmenet解决篇/#more">浏览更多</a>
-          </p>
-        
+        <p></p><h2>本来建了基于Hexo+GitHub+Gitment的博客，小编用的landscape主题，但是gitment总出问题，提示Error: Not Found，原来是OAuth Application注册就有问题了，接下来小编就一步一步还原我的解决方案</h2><h3>1. 注册 OAuth Application</h3><a id="more"></a><p>小编是把博客上传到github上的，所以具体注册如下</p><p><img src="/my-blog/2018/08/21/Hexo-gitmenet解决篇/zhuce.png" alt="gitmenet"></p><h3>2.在主题文件中创建一个git.ejs文件，内容如下</h3><p><img src="/my-blog/2018/08/21/Hexo-gitmenet解决篇/new.png" alt="gitmenet"></p><p><img src="/my-blog/2018/08/21/Hexo-gitmenet解决篇/git.png" alt="gitmenet"></p><h3>3.在主题文件中的article.ejs中添加如下代码</h3><p><img src="/my-blog/2018/08/21/Hexo-gitmenet解决篇/添加.png" alt="gitmenet"></p><h3>4.出现Error: Comments Not Initialized，点击login授权</h3><p><img src="/my-blog/2018/08/21/Hexo-gitmenet解决篇/not.png" alt="gitmenet"></p><p></p>
+
       
     </div>
     <footer class="article-footer">
@@ -97,103 +101,40 @@
 
 
   
-</article>
-
-
-
+  
+   
+  <div id="git"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: 'Tue Aug 21 2018 18:55:04 GMT+0800',
+  owner: "Xserena",
+  repo: "xserena.github.io",
+  oauth: {
+    client_id: "73749fd90cf36c53f189",
+    client_secret:"6239c81efc5aadd894353253c450fa3bea90fb29",
+  },
+})
+gitment.render('git')
+</script>
 
   
-    <article id="post-微信小程序-豆瓣热映" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/my-blog/2018/08/21/微信小程序-豆瓣热映/" class="article-date">
-  <time datetime="2018-08-21T05:51:43.000Z" itemprop="datePublished">2018-08-21</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/my-blog/2018/08/21/微信小程序-豆瓣热映/">微信小程序-豆瓣热映</a>
-    </h1>
-  
 
-      </header>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p></p><h2>1.微信公众平台注册账号(不过小编是通过下载微信开发者工具，再使用微信扫描进入的)</h2><p><img src="/my-blog/2018/08/21/微信小程序-豆瓣热映/download.png" alt="安装小程序"></p>
-        
-          <p class="article-more-link">
-            <a href="/my-blog/2018/08/21/微信小程序-豆瓣热映/#more">浏览更多</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://xserena.github.io/my-blog/2018/08/21/微信小程序-豆瓣热映/" data-id="cjl3n66qg0002lcg8jp7nx4pf" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-
+<nav id="article-nav">
+  
+  
+    <a href="/my-blog/2018/08/21/微信小程序-豆瓣热映/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">微信小程序-豆瓣热映</div>
+    </a>
+  
+</nav>
 
   
 </article>
 
-
-
-
-  
-    <article id="post-Hexo-Github搭建博客" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/my-blog/2018/08/18/Hexo-Github搭建博客/" class="article-date">
-  <time datetime="2018-08-18T15:16:02.000Z" itemprop="datePublished">2018-08-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/my-blog/2018/08/18/Hexo-Github搭建博客/">Hexo+Github搭建博客</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><br></p>
-<p></p><h2>1.安装Node.js和配置好Node.js环境，可以打开cmd查看配置情况</h2><p><img src="/my-blog/2018/08/18/Hexo-Github搭建博客/node-npm.png" alt="安装Node.js和配置好Node.js环境，可以打开cmd查看配置情况"></p>
-        
-          <p class="article-more-link">
-            <a href="/my-blog/2018/08/18/Hexo-Github搭建博客/#more">浏览更多</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://xserena.github.io/my-blog/2018/08/18/Hexo-Github搭建博客/" data-id="cjl3n66q60000lcg8rtk17qk0" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-
-
-  
-</article>
-
-
-
-
-  
 
 
 </section>
