@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>post请求表单数据-node | Xserena的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="网上听了点node的课程，运用一下1.安装node，省略…点击查看API文档2.安装formidable模块，点击查看API文档">
+<meta property="og:type" content="article">
+<meta property="og:title" content="post请求表单数据-node">
+<meta property="og:url" content="https://xserena.github.io/my-blog/2018/08/24/post请求表单数据-node/index.html">
+<meta property="og:site_name" content="Xserena的博客">
+<meta property="og:description" content="网上听了点node的课程，运用一下1.安装node，省略…点击查看API文档2.安装formidable模块，点击查看API文档">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://xserena.github.io/my-blog/2018/08/24/post请求表单数据-node/download.png">
+<meta property="og:image" content="https://xserena.github.io/my-blog/2018/08/24/post请求表单数据-node/post.png">
+<meta property="og:image" content="https://xserena.github.io/my-blog/2018/08/24/post请求表单数据-node/ok.png">
+<meta property="og:image" content="https://xserena.github.io/my-blog/2018/08/24/post请求表单数据-node/hsq.png">
+<meta property="og:image" content="https://xserena.github.io/my-blog/2018/08/24/post请求表单数据-node/err.png">
+<meta property="og:image" content="https://xserena.github.io/my-blog/2018/08/24/post请求表单数据-node/tskill.png">
+<meta property="og:updated_time" content="2018-08-24T16:59:36.103Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="post请求表单数据-node">
+<meta name="twitter:description" content="网上听了点node的课程，运用一下1.安装node，省略…点击查看API文档2.安装formidable模块，点击查看API文档">
+<meta name="twitter:image" content="https://xserena.github.io/my-blog/2018/08/24/post请求表单数据-node/download.png">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/my-blog/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/my-blog/" id="logo">Xserena的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/my-blog/">主页</a>
+        
+          <a class="main-nav-link" href="/my-blog/archives">分类</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+       
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://xserena.github.io/my-blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-post请求表单数据-node" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/my-blog/2018/08/24/post请求表单数据-node/" class="article-date">
+  <time datetime="2018-08-24T15:18:15.000Z" itemprop="datePublished">2018-08-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      post请求表单数据-node
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p></p><h3>网上听了点node的课程，运用一下</h3><h3>1.安装node，省略…<a href="http://nodejs.cn/" target="_blank">点击查看API文档</a></h3><h3>2.安装formidable模块，<a href="https://github.com/felixge/node-formidable" target="_blank">点击查看API文档</a></h3><p><img src="/my-blog/2018/08/24/post请求表单数据-node/download.png" alt="post请求表单数据-node"></p><a id="more"></a><h3>3.html代码：(注意要写enctype=”multipart/form-data”，因为要上传照片，小编之前就是纳闷好久，为什么接收的文件都为空)</h3><p><div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span style="background-color: #202020; padding: 0 5px 0 5px"> 1</span> <span style="color: #cd2828; font-weight: bold">&lt;!DOCTYPE html&gt;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px"> 2</span> <span style="color: #6ab825; font-weight: bold">&lt;html&gt;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px"> 3</span> <span style="color: #6ab825; font-weight: bold">&lt;head&gt;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px"> 4</span>     <span style="color: #6ab825; font-weight: bold">&lt;meta</span> <span style="color: #bbbbbb">charset=</span><span style="color: #ed9d13">&quot;utf-8&quot;</span><span style="color: #6ab825; font-weight: bold">&gt;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px"> 5</span>     <span style="color: #6ab825; font-weight: bold">&lt;title&gt;&lt;/title&gt;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px"> 6</span>     <span style="color: #6ab825; font-weight: bold">&lt;style </span><span style="color: #bbbbbb">type=</span><span style="color: #ed9d13">&quot;text/css&quot;</span><span style="color: #6ab825; font-weight: bold">&gt;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px"> 7</span>         <span style="color: #6ab825; font-weight: bold">form</span><span style="color: #d0d0d0">{</span><br><span style="background-color: #202020; padding: 0 5px 0 5px"> 8</span>             <span style="color: #6ab825; font-weight: bold">width</span><span style="color: #d0d0d0">:</span> <span style="color: #3677a9">400px</span><span style="color: #d0d0d0">;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px"> 9</span>             <span style="color: #6ab825; font-weight: bold">margin</span><span style="color: #d0d0d0">:</span> <span style="color: #3677a9">50px</span> <span style="color: #6ab825; font-weight: bold">auto</span><span style="color: #d0d0d0">;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">10</span>         <span style="color: #d0d0d0">}</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">11</span>     <span style="color: #6ab825; font-weight: bold">&lt;/style&gt;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">12</span> <span style="color: #6ab825; font-weight: bold">&lt;/head&gt;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">13</span> <span style="color: #6ab825; font-weight: bold">&lt;body&gt;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">14</span>     <span style="color: #6ab825; font-weight: bold">&lt;form</span> <span style="color: #bbbbbb">action=</span><span style="color: #ed9d13">&quot;<a href="http://127.0.0.1:80/postmsg" target="_blank" rel="noopener">http://127.0.0.1:80/postmsg</a>&quot;</span> <span style="color: #bbbbbb">method=</span><span style="color: #ed9d13">&quot;post&quot;</span> <span style="color: #bbbbbb">enctype=</span><span style="color: #ed9d13">&quot;multipart/form-data&quot;</span> <span style="color: #bbbbbb">autocomplete=</span><span style="color: #ed9d13">&quot;off&quot;</span><span style="color: #6ab825; font-weight: bold">&gt;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">15</span>         姓名：<span style="color: #6ab825; font-weight: bold">&lt;input</span> <span style="color: #bbbbbb">type=</span><span style="color: #ed9d13">&quot;text&quot;</span> <span style="color: #bbbbbb">name=</span><span style="color: #ed9d13">&quot;name&quot;</span><span style="color: #6ab825; font-weight: bold">&gt;&lt;br&gt;&lt;br&gt;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">16</span>         年龄：<span style="color: #6ab825; font-weight: bold">&lt;input</span> <span style="color: #bbbbbb">type=</span><span style="color: #ed9d13">&quot;text&quot;</span> <span style="color: #bbbbbb">name=</span><span style="color: #ed9d13">&quot;age&quot;</span><span style="color: #6ab825; font-weight: bold">&gt;&lt;br&gt;&lt;br&gt;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">17</span>         性别：<span style="color: #6ab825; font-weight: bold">&lt;input</span> <span style="color: #bbbbbb">type=</span><span style="color: #ed9d13">&quot;radio&quot;</span> <span style="color: #bbbbbb">name=</span><span style="color: #ed9d13">&quot;sex&quot;</span> <span style="color: #bbbbbb">value=</span><span style="color: #ed9d13">&quot;男&quot;</span><span style="color: #6ab825; font-weight: bold">&gt;</span>男<br><span style="background-color: #202020; padding: 0 5px 0 5px">18</span>         <span style="color: #6ab825; font-weight: bold">&lt;input</span> <span style="color: #bbbbbb">type=</span><span style="color: #ed9d13">&quot;radio&quot;</span> <span style="color: #bbbbbb">name=</span><span style="color: #ed9d13">&quot;sex&quot;</span> <span style="color: #bbbbbb">value=</span><span style="color: #ed9d13">&quot;女&quot;</span><span style="color: #6ab825; font-weight: bold">&gt;</span>女<span style="color: #6ab825; font-weight: bold">&lt;br&gt;&lt;br&gt;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">19</span>         照片：<span style="color: #6ab825; font-weight: bold">&lt;input</span> <span style="color: #bbbbbb">type=</span><span style="color: #ed9d13">&quot;file&quot;</span> <span style="color: #bbbbbb">name=</span><span style="color: #ed9d13">&quot;photo&quot;</span><span style="color: #6ab825; font-weight: bold">&gt;&lt;br&gt;&lt;br&gt;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">20</span>         <span style="color: #6ab825; font-weight: bold">&lt;input</span> <span style="color: #bbbbbb">type=</span><span style="color: #ed9d13">&quot;submit&quot;</span> <span style="color: #bbbbbb">name=</span><span style="color: #ed9d13">&quot;&quot;</span> <span style="color: #bbbbbb">value=</span><span style="color: #ed9d13">&quot;提交&quot;</span><span style="color: #6ab825; font-weight: bold">&gt;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">21</span>     <span style="color: #6ab825; font-weight: bold">&lt;/form&gt;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">22</span> <span style="color: #6ab825; font-weight: bold">&lt;/body&gt;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">23</span> <span style="color: #6ab825; font-weight: bold">&lt;/html&gt;</span><br></pre></div></p><h3>4.js代码：</h3><p><div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span style="background-color: #202020; padding: 0 5px 0 5px"> 1</span> <span style="color: #999999; font-style: italic">//创建http服务器所需模块</span><br><span style="background-color: #202020; padding: 0 5px 0 5px"> 2</span> <span style="color: #6ab825; font-weight: bold">let</span> <span style="color: #d0d0d0">http=require(</span><span style="color: #ed9d13">&quot;http&quot;</span><span style="color: #d0d0d0">);</span><br><span style="background-color: #202020; padding: 0 5px 0 5px"> 3</span> <span style="color: #6ab825; font-weight: bold">let</span> <span style="color: #d0d0d0">url=require(</span><span style="color: #ed9d13">&quot;url&quot;</span><span style="color: #d0d0d0">);</span><br><span style="background-color: #202020; padding: 0 5px 0 5px"> 4</span> <span style="color: #999999; font-style: italic">//处理表单数据所需模块：node-formidable专门处理表单</span><br><span style="background-color: #202020; padding: 0 5px 0 5px"> 5</span> <span style="color: #999999; font-style: italic">//安装：cnpm i -S formidable</span><br><span style="background-color: #202020; padding: 0 5px 0 5px"> 6</span> <span style="color: #6ab825; font-weight: bold">let</span> <span style="color: #d0d0d0">formidable</span> <span style="color: #d0d0d0">=</span> <span style="color: #d0d0d0">require(</span><span style="color: #ed9d13">&#39;formidable&#39;</span><span style="color: #d0d0d0">);</span><br><span style="background-color: #202020; padding: 0 5px 0 5px"> 7</span> <span style="color: #6ab825; font-weight: bold">let</span> <span style="color: #d0d0d0">util</span> <span style="color: #d0d0d0">=</span> <span style="color: #d0d0d0">require(</span><span style="color: #ed9d13">&#39;util&#39;</span><span style="color: #d0d0d0">);</span><br><span style="background-color: #202020; padding: 0 5px 0 5px"> 8</span> <span style="color: #999999; font-style: italic">//修改文件名</span><br><span style="background-color: #202020; padding: 0 5px 0 5px"> 9</span> <span style="color: #6ab825; font-weight: bold">let</span> <span style="color: #d0d0d0">fs=require(</span><span style="color: #ed9d13">&#39;fs&#39;</span><span style="color: #d0d0d0">);</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">10</span> <span style="color: #d0d0d0">http.createServer(</span><span style="color: #6ab825; font-weight: bold">function</span><span style="color: #d0d0d0">(req,</span> <span style="color: #d0d0d0">res)</span> <span style="color: #d0d0d0">{</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">11</span>   <span style="color: #6ab825; font-weight: bold">if</span> <span style="color: #d0d0d0">(req.url</span> <span style="color: #d0d0d0">==</span> <span style="color: #ed9d13">&#39;/postmsg&#39;</span> <span style="color: #d0d0d0">&amp;&amp;</span> <span style="color: #d0d0d0">req.method.toLowerCase()</span> <span style="color: #d0d0d0">==</span> <span style="color: #ed9d13">&#39;post&#39;</span><span style="color: #d0d0d0">)</span> <span style="color: #d0d0d0">{</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">12</span>     <span style="color: #999999; font-style: italic">//实例化对象</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">13</span>     <span style="color: #6ab825; font-weight: bold">let</span> <span style="color: #d0d0d0">form</span> <span style="color: #d0d0d0">=</span> <span style="color: #6ab825; font-weight: bold">new</span> <span style="color: #d0d0d0">formidable.IncomingForm();</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">14</span>     <span style="color: #999999; font-style: italic">//设置上传的文件路径(如：创建一个名为”upload”的文件，将要上传的照片存在这里)</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">15</span>     <span style="color: #d0d0d0">form.uploadDir</span> <span style="color: #d0d0d0">=</span><span style="color: #ed9d13">&#39;./upload&#39;</span><span style="color: #d0d0d0">;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">16</span>     <span style="color: #999999; font-style: italic">//获取表单内容</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">17</span>     <span style="color: #d0d0d0">form.parse(req,</span> <span style="color: #d0d0d0">(err,</span> <span style="color: #d0d0d0">fields,</span> <span style="color: #d0d0d0">files)=&gt;{</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">18</span>       <span style="color: #6ab825; font-weight: bold">let</span> <span style="color: #d0d0d0">oldName=<strong>dirname+</strong></span><span style="color: #ed9d13">&#39;/&#39;</span><span style="color: #d0d0d0">+files.photo.path;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">19</span>       <span style="color: #6ab825; font-weight: bold">let</span> <span style="color: #d0d0d0">newName=dirname+</span><span style="color: #ed9d13">&#39;/upload/&#39;</span><span style="color: #d0d0d0">+files.photo.name;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">20</span>       <span style="color: #d0d0d0">fs.rename(oldName,newName,(err)=&gt;{</span>    <span style="color: #999999; font-style: italic">//fs.rename：改名(改为该文件原来的名字)</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">21</span>           <span style="color: #6ab825; font-weight: bold">if</span> <span style="color: #d0d0d0">(err)</span> <span style="color: #d0d0d0">{</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">22</span>               <span style="color: #6ab825; font-weight: bold">throw</span> <span style="color: #d0d0d0">err</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">23</span>           <span style="color: #d0d0d0">}</span><span style="color: #6ab825; font-weight: bold">else</span><span style="color: #d0d0d0">{</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">24</span>               <span style="color: #d0d0d0">res.writeHead(</span><span style="color: #3677a9">200</span><span style="color: #d0d0d0">,</span> <span style="color: #d0d0d0">{</span><span style="color: #ed9d13">&#39;content-type&#39;</span><span style="color: #d0d0d0">:</span> <span style="color: #ed9d13">&#39;text/plain;charset=UTF-8&#39;</span><span style="color: #d0d0d0">});</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">25</span>              <span style="color: #d0d0d0">res.write(</span><span style="color: #ed9d13">&#39;写入成功&#39;</span><span style="color: #d0d0d0">);</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">26</span>           <span style="color: #d0d0d0">}</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">27</span>           <span style="color: #d0d0d0">res.end(util.inspect({fields:</span> <span style="color: #d0d0d0">fields,</span> <span style="color: #d0d0d0">files:</span> <span style="color: #d0d0d0">files}));</span>  <span style="color: #999999; font-style: italic">//util.inspect:将obj转成字符串</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">28</span>       <span style="color: #d0d0d0">})</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">29</span>     <span style="color: #d0d0d0">});</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">30</span>   <span style="color: #d0d0d0">}</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">31</span> <span style="color: #d0d0d0">}).listen(</span><span style="color: #3677a9">80</span><span style="color: #d0d0d0">,</span><span style="color: #ed9d13">&#39;127.0.0.1&#39;</span><span style="color: #d0d0d0">)</span>   <span style="color: #999999; font-style: italic">//设置80端口的http</span><br></pre></div><br></p><h3>5.打开js文件，ctrl+B  即：运行文件，http连接走起 (注：小编用的sublime)</h3><h3>6.打开html网页，填写数据，上传文件，点击提交(form请求的是  <a href="http://127.0.0.1:80/postmsg" target="_blank" rel="noopener">http://127.0.0.1:80/postmsg</a>)</h3><p><img src="/my-blog/2018/08/24/post请求表单数据-node/post.png" alt="post请求表单数据-node"></p><h3>7.跳转到  <a href="http://127.0.0.1/postmsg页面，如下图" target="_blank" rel="noopener">http://127.0.0.1/postmsg页面，如下图</a></h3><p><img src="/my-blog/2018/08/24/post请求表单数据-node/ok.png" alt="post请求表单数据-node"></p><h3>8.接下来，在upload文件中就存入了上传的图片</h3><p><img src="/my-blog/2018/08/24/post请求表单数据-node/hsq.png" alt="post请求表单数据-node"></p><h3>注意事项:小编用的sublime，总是会出现修改了js文件后刷新页面会报错的情况</h3><p><img src="/my-blog/2018/08/24/post请求表单数据-node/err.png" alt="post请求表单数据-node"></p><h3>原因：端口号被占用了，解决方法：将这个端口号先灭掉，打开cmd，输入:tskill node ，再运行起：ctrl+B </h3><p><img src="/my-blog/2018/08/24/post请求表单数据-node/tskill.png" alt="post请求表单数据-node"></p><p></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://xserena.github.io/my-blog/2018/08/24/post请求表单数据-node/" data-id="cjl88sx31000218g8mf0ktyb5" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+
+
+  
+  
+   
+  <div id="git"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: 'Fri Aug 24 2018 23:18:15 GMT+0800',
+  owner: "Xserena",
+  repo: "xserena.github.io",
+  oauth: {
+    client_id: "73749fd90cf36c53f189",
+    client_secret:"6239c81efc5aadd894353253c450fa3bea90fb29",
+  },
+})
+gitment.render('git')
+</script>
+
+  
+
+    
+<nav id="article-nav">
+  
+  
+    <a href="/my-blog/2018/08/21/Hexo-gitment解决篇/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hexo gitment解决篇</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/my-blog/archives/2018/08/">2018年08月</a><span class="archive-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最近发布</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/my-blog/2018/08/24/post请求表单数据-node/">post请求表单数据-node</a>
+          </li>
+        
+          <li>
+            <a href="/my-blog/2018/08/21/Hexo-gitment解决篇/">Hexo gitment解决篇</a>
+          </li>
+        
+          <li>
+            <a href="/my-blog/2018/08/21/微信小程序-豆瓣热映/">微信小程序-豆瓣热映</a>
+          </li>
+        
+          <li>
+            <a href="/my-blog/2018/08/18/Hexo-Github搭建博客/">Hexo+Github搭建博客</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Xserena<br>
+      Powered by <a href="https://xserena.github.io/my-blog/" target="_blank">Xserena-blog</a>
+      <span id="busuanzi_container_site_uv"> 
+	  本站访客数<span id="busuanzi_value_site_uv" style="color:red"></span>人次
+	</span>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/my-blog/" class="mobile-nav-link">主页</a>
+  
+    <a href="/my-blog/archives" class="mobile-nav-link">分类</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/my-blog/fancybox/jquery.fancybox.css">
+  <script src="/my-blog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/my-blog/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
