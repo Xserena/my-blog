@@ -21,7 +21,7 @@
 <meta property="og:image" content="https://xserena.github.io/my-blog/2018/08/25/Hexo添加分享功能/api.png">
 <meta property="og:image" content="https://xserena.github.io/my-blog/2018/08/25/Hexo添加分享功能/static.png">
 <meta property="og:image" content="https://xserena.github.io/my-blog/2018/08/25/Hexo添加分享功能/done.png">
-<meta property="og:updated_time" content="2018-08-25T07:25:13.736Z">
+<meta property="og:updated_time" content="2018-08-25T07:29:29.339Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo添加分享功能">
 <meta name="twitter:description" content="小编用的是Hexo的landscape主题，现在就给我的博客添加分享功能1.打开百度官方分享按钮网站：  百度分享2.找到“直接复制代码-&amp;gt;复制”">
@@ -90,7 +90,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p></p><h3>小编用的是Hexo的landscape主题，现在就给我的博客添加分享功能</h3><h3>1.打开百度官方分享按钮网站：  <a href="http://share.baidu.com/code" target="_blank">百度分享</a></h3><h3>2.找到“直接复制代码-&gt;复制”</h3><a id="more"></a><p><img src="/my-blog/2018/08/25/Hexo添加分享功能/copy.png" alt="百度分享"></p><h3>3.打开themes\landscape\layout_partial\article.ejs，将复制的代码粘贴到红框中(原来的代码直接覆盖就可以了)</h3><p><img src="/my-blog/2018/08/25/Hexo添加分享功能/jt.png" alt="百度分享"></p><h3>完成！(不过加载稍微有些慢)</h3><h3>备注：本地支持测试，如下图</h3><p><img src="/my-blog/2018/08/25/Hexo添加分享功能/share.png" alt="百度分享"></p><h3>但是传到github上就不行，提示share.js 404，再到网上各种查原因，大概知道是百度分享不支持 HTTPS之类的，巴啦啦。。。就是各种bug</h3><p><img src="/my-blog/2018/08/25/Hexo添加分享功能/404.png" alt="百度分享"></p><h3>各种仿照别人的做法都失败了，所以，就整理了一下思路：</h3><p>1.需要的文件：static，下载地址：<a href="https://github.com/hrwhisper/baiduShare" target="_blank">static</a></p><p>2.原来的static是请求http，别人也说了百度分享不支持 HTTPS，所以就404啰。解决方法：把static文件资源放到https的请求里呗</p><p>3.小编在我的github中创建了一个名为static的仓库，用于存放下载下来的static文件资源，结构如下</p><p><img src="/my-blog/2018/08/25/Hexo添加分享功能/api.png" alt="百度分享"></p><p>4.打开themes\landscape\layout_partial\article.ejs，修改一处：即把static的请求路径改问自己存放的文件路径</p><p><img src="/my-blog/2018/08/25/Hexo添加分享功能/static.png" alt="百度分享"></p><h3>这样就可以了，不得不说(思路混乱的时候)真是费神！</h3><p><img src="/my-blog/2018/08/25/Hexo添加分享功能/done.png" alt="百度分享"></p><p></p>
+        <p></p><h3>小编用的是Hexo的landscape主题，现在就给我的博客添加分享功能</h3><h3>1.打开百度官方分享按钮网站：  <a href="http://share.baidu.com/code" target="_blank">百度分享</a></h3><h3>2.找到“直接复制代码-&gt;复制”</h3><a id="more"></a><p><img src="/my-blog/2018/08/25/Hexo添加分享功能/copy.png" alt="百度分享"></p><h3>3.打开themes\landscape\layout_partial\article.ejs，将复制的代码粘贴到红框中(原来的代码直接覆盖就可以了)</h3><p><img src="/my-blog/2018/08/25/Hexo添加分享功能/jt.png" alt="百度分享"></p><h3>完成！(不过加载稍微有些慢)</h3><h3>备注：本地支持测试，如下图</h3><p><img src="/my-blog/2018/08/25/Hexo添加分享功能/share.png" alt="百度分享"></p><h3>但是传到github上就不行，提示share.js 404，再到网上各种查原因，大概知道是百度分享不支持 HTTPS之类的，巴啦啦。。。就是各种bug</h3><p><img src="/my-blog/2018/08/25/Hexo添加分享功能/404.png" alt="百度分享"></p><h3>各种仿照别人的做法都失败了，所以，就整理了一下思路：<p>1.需要的文件：static，下载地址：<a href="https://github.com/hrwhisper/baiduShare" target="_blank">static</a></p><p>2.原来的static是请求http，别人也说了百度分享不支持 HTTPS，所以就404啰。解决方法：把static文件资源放到https的请求里呗</p><p>3.小编在我的github中创建了一个名为static的仓库，用于存放下载下来的static文件资源，结构如下</p><p><img src="/my-blog/2018/08/25/Hexo添加分享功能/api.png" alt="百度分享"></p><p>4.打开themes\landscape\layout_partial\article.ejs，修改一处：即把static的请求路径改为自己存放的文件路径</p></h3><p><img src="/my-blog/2018/08/25/Hexo添加分享功能/static.png" alt="百度分享"></p><h3>这样就可以了，不得不说(思路混乱的时候)真是费神！</h3><p><img src="/my-blog/2018/08/25/Hexo添加分享功能/done.png" alt="百度分享"></p><p></p>
 <p></p><h3>点个赞再走吧^v^</h3><br><p></p>
 
       
