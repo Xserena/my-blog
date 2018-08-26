@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>vue--表格操作 | Xserena的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="vue操作表格的增删，再体会一下vue的数据驱动一个html，一个js，上代码1.html代码">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue--表格操作">
+<meta property="og:url" content="https://xserena.github.io/my-blog/2018/08/26/vue-表格操作/index.html">
+<meta property="og:site_name" content="Xserena的博客">
+<meta property="og:description" content="vue操作表格的增删，再体会一下vue的数据驱动一个html，一个js，上代码1.html代码">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://xserena.github.io/my-blog/2018/08/26/vue-表格操作/start.png">
+<meta property="og:image" content="https://xserena.github.io/my-blog/2018/08/26/vue-表格操作/err.png">
+<meta property="og:image" content="https://xserena.github.io/my-blog/2018/08/26/vue-表格操作/ok.png">
+<meta property="og:image" content="https://xserena.github.io/my-blog/2018/08/26/vue-表格操作/del.png">
+<meta property="og:image" content="https://xserena.github.io/my-blog/2018/08/26/vue-表格操作/done.png">
+<meta property="og:updated_time" content="2018-08-26T05:56:40.295Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vue--表格操作">
+<meta name="twitter:description" content="vue操作表格的增删，再体会一下vue的数据驱动一个html，一个js，上代码1.html代码">
+<meta name="twitter:image" content="https://xserena.github.io/my-blog/2018/08/26/vue-表格操作/start.png">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/my-blog/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/my-blog/" id="logo">Xserena的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/my-blog/">主页</a>
+        
+          <a class="main-nav-link" href="/my-blog/archives">分类</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+       
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://xserena.github.io/my-blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-vue-表格操作" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/my-blog/2018/08/26/vue-表格操作/" class="article-date">
+  <time datetime="2018-08-26T05:07:53.000Z" itemprop="datePublished">2018-08-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      vue--表格操作
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p></p><h2>vue操作表格的增删，再体会一下vue的数据驱动</h2><h3>一个html，一个js，上代码</h3><h3>1.html代码</h3><a id="more"></a><p><div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span style="background-color: #202020; padding: 0 5px 0 5px"> 1</span> <span style="color: #cd2828; font-weight: bold">&lt;!DOCTYPE html&gt;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px"> 2</span> <span style="color: #6ab825; font-weight: bold">&lt;html&gt;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px"> 3</span> <span style="color: #6ab825; font-weight: bold">&lt;head&gt;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px"> 4</span>     <span style="color: #6ab825; font-weight: bold">&lt;meta</span> <span style="color: #bbbbbb">charset=</span><span style="color: #ed9d13">&quot;utf-8&quot;</span><span style="color: #6ab825; font-weight: bold">&gt;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px"> 5</span>     <span style="color: #6ab825; font-weight: bold">&lt;title&gt;&lt;/title&gt;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px"> 6</span>     <span style="color: #6ab825; font-weight: bold">&lt;style </span><span style="color: #bbbbbb">type=</span><span style="color: #ed9d13">&quot;text/css&quot;</span><span style="color: #6ab825; font-weight: bold">&gt;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px"> 7</span>     <span style="color: #447fcf">#app</span><span style="color: #d0d0d0">{</span><br><span style="background-color: #202020; padding: 0 5px 0 5px"> 8</span>         <span style="color: #6ab825; font-weight: bold">width</span><span style="color: #d0d0d0">:</span> <span style="color: #3677a9">600px</span><span style="color: #d0d0d0">;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px"> 9</span>         <span style="color: #6ab825; font-weight: bold">margin</span><span style="color: #d0d0d0">:</span><span style="color: #3677a9">50px</span> <span style="color: #6ab825; font-weight: bold">auto</span><span style="color: #d0d0d0">;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">10</span>     <span style="color: #d0d0d0">}</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">11</span>     <span style="color: #447fcf">#search</span> <span style="color: #6ab825; font-weight: bold">input</span><span style="color: #d0d0d0">{</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">12</span>         <span style="color: #6ab825; font-weight: bold">width</span><span style="color: #d0d0d0">:</span> <span style="color: #3677a9">80px</span><span style="color: #d0d0d0">;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">13</span>         <span style="color: #6ab825; font-weight: bold">height</span><span style="color: #d0d0d0">:</span> <span style="color: #3677a9">30px</span><span style="color: #d0d0d0">;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">14</span>     <span style="color: #d0d0d0">}</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">15</span>     <span style="color: #447fcf">#search</span> <span style="color: #6ab825; font-weight: bold">button</span><span style="color: #d0d0d0">{</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">16</span>         <span style="color: #6ab825; font-weight: bold">width</span><span style="color: #d0d0d0">:</span> <span style="color: #3677a9">50px</span><span style="color: #d0d0d0">;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">17</span>         <span style="color: #6ab825; font-weight: bold">height</span><span style="color: #d0d0d0">:</span> <span style="color: #3677a9">38px</span><span style="color: #d0d0d0">;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">18</span>         <span style="color: #6ab825; font-weight: bold">background-color</span><span style="color: #d0d0d0">:</span> <span style="color: #24909d">skyblue</span><span style="color: #d0d0d0">;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">19</span>         <span style="color: #6ab825; font-weight: bold">border</span><span style="color: #d0d0d0">:</span> <span style="color: #3677a9">1px</span> <span style="color: #6ab825; font-weight: bold">solid</span> <span style="color: #24909d">blue</span><span style="color: #d0d0d0">;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">20</span>     <span style="color: #d0d0d0">}</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">21</span>     <span style="color: #6ab825; font-weight: bold">table</span><span style="color: #d0d0d0">{</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">22</span>         <span style="color: #6ab825; font-weight: bold">width</span><span style="color: #d0d0d0">:</span> <span style="color: #3677a9">500px</span><span style="color: #d0d0d0">;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">23</span>         <span style="color: #6ab825; font-weight: bold">text-align</span><span style="color: #d0d0d0">:</span> <span style="color: #6ab825; font-weight: bold">center</span><span style="color: #d0d0d0">;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">24</span>         <span style="color: #6ab825; font-weight: bold">margin-top</span><span style="color: #d0d0d0">:</span> <span style="color: #3677a9">20px</span><span style="color: #d0d0d0">;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">25</span>     <span style="color: #d0d0d0">}</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">26</span>     <span style="color: #6ab825; font-weight: bold">table</span> <span style="color: #447fcf">#title</span><span style="color: #d0d0d0">{</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">27</span>         <span style="color: #6ab825; font-weight: bold">background-color</span><span style="color: #d0d0d0">:</span> <span style="color: #24909d">skyblue</span><span style="color: #d0d0d0">;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">28</span>     <span style="color: #d0d0d0">}</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">29</span>     <span style="color: #6ab825; font-weight: bold">table</span> <span style="color: #6ab825; font-weight: bold">tr</span><span style="color: #d0d0d0">{</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">30</span>         <span style="color: #6ab825; font-weight: bold">height</span><span style="color: #d0d0d0">:</span> <span style="color: #3677a9">40px</span><span style="color: #d0d0d0">;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">31</span>     <span style="color: #d0d0d0">}</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">32</span>     <span style="color: #6ab825; font-weight: bold">table</span> <span style="color: #6ab825; font-weight: bold">button</span><span style="color: #d0d0d0">{</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">33</span>         <span style="color: #6ab825; font-weight: bold">background-color</span><span style="color: #d0d0d0">:</span> <span style="color: #24909d">skyblue</span><span style="color: #d0d0d0">;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">34</span>     <span style="color: #d0d0d0">}</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">35</span>     <span style="color: #6ab825; font-weight: bold">h3</span><span style="color: #d0d0d0">{</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">36</span>         <span style="color: #6ab825; font-weight: bold">margin-left</span><span style="color: #d0d0d0">:</span> <span style="color: #3677a9">180px</span><span style="color: #d0d0d0">;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">37</span>     <span style="color: #d0d0d0">}</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">38</span>     <span style="color: #6ab825; font-weight: bold">&lt;/style&gt;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">39</span>     <span style="color: #6ab825; font-weight: bold">&lt;script </span><span style="color: #bbbbbb">src=</span><span style="color: #ed9d13">&quot;<a href="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" target="_blank" rel="noopener">https://cdn.jsdelivr.net/npm/vue/dist/vue.js</a>&quot;</span><span style="color: #6ab825; font-weight: bold">&gt;&lt;/script&gt;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">40</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">41</span> <span style="color: #6ab825; font-weight: bold">&lt;/head&gt;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">42</span> <span style="color: #6ab825; font-weight: bold">&lt;body&gt;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">43</span>     <span style="color: #6ab825; font-weight: bold">&lt;div</span> <span style="color: #bbbbbb">id=</span><span style="color: #ed9d13">&quot;app&quot;</span><span style="color: #6ab825; font-weight: bold">&gt;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">44</span>         <span style="color: #6ab825; font-weight: bold">&lt;h3&gt;</span>总共条记录<span style="color: #6ab825; font-weight: bold">&lt;/h3&gt;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">45</span>         <span style="color: #6ab825; font-weight: bold">&lt;div</span> <span style="color: #bbbbbb">id=</span><span style="color: #ed9d13">&quot;search&quot;</span><span style="color: #6ab825; font-weight: bold">&gt;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">46</span>         姓名：<span style="color: #6ab825; font-weight: bold">&lt;input</span> <span style="color: #bbbbbb">type=</span><span style="color: #ed9d13">&quot;text&quot;</span> <span style="color: #bbbbbb">name=</span><span style="color: #ed9d13">&quot;name&quot;</span> <span style="color: #bbbbbb">v-model=</span><span style="color: #ed9d13">&quot;name&quot;</span><span style="color: #6ab825; font-weight: bold">&gt;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">47</span>         年龄：<span style="color: #6ab825; font-weight: bold">&lt;input</span> <span style="color: #bbbbbb">type=</span><span style="color: #ed9d13">&quot;text&quot;</span> <span style="color: #bbbbbb">name=</span><span style="color: #ed9d13">&quot;age&quot;</span> <span style="color: #bbbbbb">v-model=</span><span style="color: #ed9d13">&quot;age&quot;</span><span style="color: #6ab825; font-weight: bold">&gt;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">48</span>         职业：<span style="color: #6ab825; font-weight: bold">&lt;input</span> <span style="color: #bbbbbb">type=</span><span style="color: #ed9d13">&quot;text&quot;</span> <span style="color: #bbbbbb">name=</span><span style="color: #ed9d13">&quot;career&quot;</span> <span style="color: #bbbbbb">v-model=</span><span style="color: #ed9d13">&quot;career&quot;</span><span style="color: #6ab825; font-weight: bold">&gt;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">49</span>         <span style="color: #6ab825; font-weight: bold">&lt;button</span> <span style="color: #bbbbbb">id=</span><span style="color: #ed9d13">&quot;insert&quot;</span> <span style="color: #a61717; background-color: #e3d2d2">@</span><span style="color: #bbbbbb">click=</span><span style="color: #ed9d13">&quot;add()&quot;</span><span style="color: #6ab825; font-weight: bold">&gt;</span>插入<span style="color: #6ab825; font-weight: bold">&lt;/button&gt;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">50</span>         <span style="color: #6ab825; font-weight: bold">&lt;/div&gt;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">51</span>         <span style="color: #6ab825; font-weight: bold">&lt;table</span> <span style="color: #bbbbbb">border=</span><span style="color: #ed9d13">&quot;1&quot;</span> <span style="color: #bbbbbb">cellspacing=</span><span style="color: #ed9d13">&quot;0&quot;</span><span style="color: #6ab825; font-weight: bold">&gt;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">52</span>             <span style="color: #6ab825; font-weight: bold">&lt;tr</span> <span style="color: #bbbbbb">id=</span><span style="color: #ed9d13">&quot;title&quot;</span><span style="color: #6ab825; font-weight: bold">&gt;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">53</span>                 <span style="color: #6ab825; font-weight: bold">&lt;td&gt;</span>姓名<span style="color: #6ab825; font-weight: bold">&lt;/td&gt;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">54</span>                 <span style="color: #6ab825; font-weight: bold">&lt;td&gt;</span>年龄<span style="color: #6ab825; font-weight: bold">&lt;/td&gt;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">55</span>                 <span style="color: #6ab825; font-weight: bold">&lt;td&gt;</span>职业<span style="color: #6ab825; font-weight: bold">&lt;/td&gt;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">56</span>                 <span style="color: #6ab825; font-weight: bold">&lt;td&gt;</span>删除<span style="color: #6ab825; font-weight: bold">&lt;/td&gt;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">57</span>             <span style="color: #6ab825; font-weight: bold">&lt;/tr&gt;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">58</span>             <span style="color: #6ab825; font-weight: bold">&lt;tr</span> <span style="color: #bbbbbb">v-for=</span><span style="color: #ed9d13">&quot;(list,index) in lists&quot;</span><span style="color: #6ab825; font-weight: bold">&gt;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">59</span>                 <span style="color: #6ab825; font-weight: bold">&lt;td&gt;</span><span style="color: #6ab825; font-weight: bold">&lt;/td&gt;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">60</span>                 <span style="color: #6ab825; font-weight: bold">&lt;td&gt;</span><span style="color: #6ab825; font-weight: bold">&lt;/td&gt;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">61</span>                 <span style="color: #6ab825; font-weight: bold">&lt;td&gt;</span><span style="color: #6ab825; font-weight: bold">&lt;/td&gt;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">62</span>                 <span style="color: #6ab825; font-weight: bold">&lt;td&gt;&lt;button</span> <span style="color: #a61717; background-color: #e3d2d2">@</span><span style="color: #bbbbbb">click=</span><span style="color: #ed9d13">&quot;del(index)&quot;</span><span style="color: #6ab825; font-weight: bold">&gt;</span>删除<span style="color: #6ab825; font-weight: bold">&lt;/button&gt;&lt;/td&gt;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">63</span>             <span style="color: #6ab825; font-weight: bold">&lt;/tr&gt;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">64</span>         <span style="color: #6ab825; font-weight: bold">&lt;/table&gt;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">65</span>     <span style="color: #6ab825; font-weight: bold">&lt;/div&gt;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">66</span>     <span style="color: #6ab825; font-weight: bold">&lt;script </span><span style="color: #bbbbbb">src=</span><span style="color: #ed9d13">&quot;表格vue.js&quot;</span><span style="color: #6ab825; font-weight: bold">&gt;&lt;/script&gt;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">67</span> <span style="color: #6ab825; font-weight: bold">&lt;/body&gt;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">68</span> <span style="color: #6ab825; font-weight: bold">&lt;/html&gt;</span><br></pre></div><br></p><h3>2.js代码</h3><p><div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span style="background-color: #202020; padding: 0 5px 0 5px"> 1</span> new Vue({<br><span style="background-color: #202020; padding: 0 5px 0 5px"> 2</span>     el:&quot;#app&quot;,<br><span style="background-color: #202020; padding: 0 5px 0 5px"> 3</span>     data:{<br><span style="background-color: #202020; padding: 0 5px 0 5px"> 4</span>         lists:[<br><span style="background-color: #202020; padding: 0 5px 0 5px"> 5</span>             {name:&quot;HaHa&quot;,age:30,career:&quot;艺人&quot;},<br><span style="background-color: #202020; padding: 0 5px 0 5px"> 6</span>             {name:&quot;serena&quot;,age:26,career:&quot;程序员&quot;},<br><span style="background-color: #202020; padding: 0 5px 0 5px"> 7</span>             {name:&quot;grace&quot;,age:26,career:&quot;程序员&quot;},<br><span style="background-color: #202020; padding: 0 5px 0 5px"> 8</span>             {name:&quot;mino&quot;,age:24,career:&quot;歌手&quot;},<br><span style="background-color: #202020; padding: 0 5px 0 5px"> 9</span>         ],<br><span style="background-color: #202020; padding: 0 5px 0 5px">10</span>         num:4,<br><span style="background-color: #202020; padding: 0 5px 0 5px">11</span>         name:&quot;&quot;,<br><span style="background-color: #202020; padding: 0 5px 0 5px">12</span>         age:0,<br><span style="background-color: #202020; padding: 0 5px 0 5px">13</span>         career:&quot;&quot;<br><span style="background-color: #202020; padding: 0 5px 0 5px">14</span>     },<br><span style="background-color: #202020; padding: 0 5px 0 5px">15</span>     methods:{<br><span style="background-color: #202020; padding: 0 5px 0 5px">16</span>         add:function () {<br><span style="background-color: #202020; padding: 0 5px 0 5px">17</span>             if (this.name!=&#39;&#39; <span style="color: #a61717; background-color: #e3d2d2">&amp;&amp;</span> this.career!=&#39;&#39;) {<br><span style="background-color: #202020; padding: 0 5px 0 5px">18</span>                 this.lists.unshift({name:this.name,age:this.age,career:this.career})<br><span style="background-color: #202020; padding: 0 5px 0 5px">19</span>             }else{<br><span style="background-color: #202020; padding: 0 5px 0 5px">20</span>                 alert(&quot;请填写完整信息&quot;)<br><span style="background-color: #202020; padding: 0 5px 0 5px">21</span>             }<br><span style="background-color: #202020; padding: 0 5px 0 5px">22</span>             this.num=this.lists.length<br><span style="background-color: #202020; padding: 0 5px 0 5px">23</span>         },<br><span style="background-color: #202020; padding: 0 5px 0 5px">24</span>         del:function (i) {   //不能用delete命名,是vue已有的方法<br><span style="background-color: #202020; padding: 0 5px 0 5px">25</span>             this.lists.splice(i,1)<br><span style="background-color: #202020; padding: 0 5px 0 5px">26</span>             this.num=this.lists.length<br><span style="background-color: #202020; padding: 0 5px 0 5px">27</span>         }<br><span style="background-color: #202020; padding: 0 5px 0 5px">28</span>     }<br><span style="background-color: #202020; padding: 0 5px 0 5px">29</span> })<br></pre></div><br></p><h3>3.开始的界面</h3><p><img src="/my-blog/2018/08/26/vue-表格操作/start.png" alt="vue-表格"></p><h3>4.插入一条信息，但是没有输入完整，弹出提示框</h3><p><img src="/my-blog/2018/08/26/vue-表格操作/err.png" alt="vue-表格"></p><h3>4.插入一条信息，输入完整</h3><p><img src="/my-blog/2018/08/26/vue-表格操作/ok.png" alt="vue-表格"></p><h3>4.删除信息</h3><p><img src="/my-blog/2018/08/26/vue-表格操作/del.png" alt="vue-表格"></p><p><img src="/my-blog/2018/08/26/vue-表格操作/done.png" alt="vue-表格"></p><h3>小编这样的新手还是得多写写代码。。。</h3><br><p></p>
+
+      
+    </div>
+     <footer class="article-footer">      <!--百度分享-->      
+        <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone"></a><a href="#" class="bds_tsina" data-cmd="tsina"></a><a href="#" class="bds_tqq" data-cmd="tqq"></a><a href="#" class="bds_renren" data-cmd="renren"></a><a href="#" class="bds_weixin" data-cmd="weixin"></a></div>
+        <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='https://xserena.github.io/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+     </footer>
+  </div>
+
+
+  
+  
+   
+  <div id="git"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: 'Sun Aug 26 2018 13:07:53 GMT+0800',
+  owner: "Xserena",
+  repo: "xserena.github.io",
+  oauth: {
+    client_id: "73749fd90cf36c53f189",
+    client_secret:"6239c81efc5aadd894353253c450fa3bea90fb29",
+  },
+})
+gitment.render('git')
+</script>
+
+  
+
+    
+<nav id="article-nav">
+  
+  
+    <a href="/my-blog/2018/08/25/Hexo添加分享功能/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hexo添加分享功能</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/my-blog/archives/2018/08/">2018年08月</a><span class="archive-list-count">6</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最近发布</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/my-blog/2018/08/26/vue-表格操作/">vue--表格操作</a>
+          </li>
+        
+          <li>
+            <a href="/my-blog/2018/08/25/Hexo添加分享功能/">Hexo添加分享功能</a>
+          </li>
+        
+          <li>
+            <a href="/my-blog/2018/08/24/post请求表单数据-node/">post请求表单数据-node</a>
+          </li>
+        
+          <li>
+            <a href="/my-blog/2018/08/21/Hexo-gitment解决篇/">Hexo gitment解决篇</a>
+          </li>
+        
+          <li>
+            <a href="/my-blog/2018/08/21/微信小程序-豆瓣热映/">微信小程序-豆瓣热映</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Xserena<br>
+      Powered by <a href="https://xserena.github.io/my-blog/" target="_blank">Xserena-blog</a>
+      <span id="busuanzi_container_site_uv"> 
+	  本站访客数<span id="busuanzi_value_site_uv" style="color:red"></span>人次
+	</span>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/my-blog/" class="mobile-nav-link">主页</a>
+  
+    <a href="/my-blog/archives" class="mobile-nav-link">分类</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/my-blog/fancybox/jquery.fancybox.css">
+  <script src="/my-blog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/my-blog/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
