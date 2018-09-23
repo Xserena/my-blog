@@ -163,6 +163,24 @@ body {
 .mobile-nav-on {
   overflow: hidden;
 }
+#totop {
+  position: fixed;
+  bottom: 50px;
+  right: 30px;
+  text-align: center;
+  z-index: 100;
+}
+#totop a {
+  display: block;
+  padding: 4px 8px;
+  color: #fff;
+  background-color: #258fb8;
+  cursor: pointer;
+  border-radius: 5px;
+}
+#totop a:hover {
+  opacity: 0.8;
+}
 #wrap {
   height: 100%;
   width: 100%;
