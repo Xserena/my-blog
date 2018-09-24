@@ -58,6 +58,94 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-CSS-position属性" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/my-blog/2018/09/24/CSS-position属性/" class="article-date">
+  <time datetime="2018-09-24T05:34:48.000Z" itemprop="datePublished">2018-09-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/my-blog/2018/09/24/CSS-position属性/">CSS-position属性</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><table style="margin:50px 0;"><tr><td>值</td><td>描述</td></tr><tr><td>absolute</td><td>生成绝对定位的元素，相对于 static 定位以外的第一个父元素进行定位。<br>元素的位置通过 “left”, “top”, “right” 以及 “bottom” 属性进行规定。</td></tr><tr><td>fixed</td><td>生成绝对定位的元素，相对于浏览器窗口进行定位。<br>元素的位置通过 “left”, “top”, “right” 以及 “bottom” 属性进行规定。</td></tr><tr><td>relative</td><td>生成相对定位的元素，相对于其正常位置进行定位。<br>因此，”left:20” 会向元素的 LEFT 位置添加 20 像素。</td></tr><tr><td>static</td><td>默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right 或者 z-index 声明）。</td></tr><tr><td>inherit</td><td>规定应该从父元素继承 position 属性的值。</td></tr></table></p>
+        
+          <p class="article-more-link">
+            <a href="/my-blog/2018/09/24/CSS-position属性/#more">浏览更多</a>
+          </p>
+        
+      
+    </div>
+     <footer class="article-footer">      <!--百度分享-->      
+        <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone"></a><a href="#" class="bds_tsina" data-cmd="tsina"></a><a href="#" class="bds_tqq" data-cmd="tqq"></a><a href="#" class="bds_renren" data-cmd="renren"></a><a href="#" class="bds_weixin" data-cmd="weixin"></a></div>
+        <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='https://xserena.github.io/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+     </footer>
+  </div>
+
+
+  
+</article>
+
+
+
+
+  
+    <article id="post-post及get请求区别" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/my-blog/2018/09/24/post及get请求区别/" class="article-date">
+  <time datetime="2018-09-24T04:39:46.000Z" itemprop="datePublished">2018-09-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/my-blog/2018/09/24/post及get请求区别/">post及get请求区别</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p></p><h2>1.ajax-get请求</h2><p><div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span style="background-color: #202020; padding: 0 5px 0 5px"> 1</span> <span style="color: #6ab825; font-weight: bold">&lt;script </span><span style="color: #bbbbbb">type=</span><span style="color: #ed9d13">&quot;text/javascript&quot;</span><span style="color: #6ab825; font-weight: bold">&gt;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px"> 2</span> <span style="color: #6ab825; font-weight: bold">function</span> <span style="color: #d0d0d0">ajax(){</span><br><span style="background-color: #202020; padding: 0 5px 0 5px"> 3</span>     <span style="color: #6ab825; font-weight: bold">var</span> <span style="color: #d0d0d0">XHR=</span><span style="color: #6ab825; font-weight: bold">null</span><span style="color: #d0d0d0">;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px"> 4</span><br><span style="background-color: #202020; padding: 0 5px 0 5px"> 5</span>     <span style="color: #999999; font-style: italic">//第一步：创建XMLHttpRequest对象</span><br><span style="background-color: #202020; padding: 0 5px 0 5px"> 6</span>     <span style="color: #6ab825; font-weight: bold">if</span> <span style="color: #d0d0d0">(</span><span style="color: #24909d">window</span><span style="color: #d0d0d0">.XMLHttpRequest)</span> <span style="color: #d0d0d0">{</span><br><span style="background-color: #202020; padding: 0 5px 0 5px"> 7</span>         <span style="color: #d0d0d0">XHR</span> <span style="color: #d0d0d0">=</span> <span style="color: #6ab825; font-weight: bold">new</span> <span style="color: #d0d0d0">XMLHttpRequest();</span>  <span style="color: #999999; font-style: italic">// 非IE内核:IE7+, Firefox, Chrome, Opera, Safari  </span><br><span style="background-color: #202020; padding: 0 5px 0 5px"> 8</span>     <span style="color: #d0d0d0">}</span> <span style="color: #6ab825; font-weight: bold">else</span> <span style="color: #6ab825; font-weight: bold">if</span> <span style="color: #d0d0d0">(</span><span style="color: #24909d">window</span><span style="color: #d0d0d0">.ActiveXObject)</span> <span style="color: #d0d0d0">{</span><br><span style="background-color: #202020; padding: 0 5px 0 5px"> 9</span>         <span style="color: #d0d0d0">XHR</span> <span style="color: #d0d0d0">=</span> <span style="color: #6ab825; font-weight: bold">new</span> <span style="color: #d0d0d0">ActiveXObject(</span><span style="color: #ed9d13">&quot;Microsoft.XMLHTTP&quot;</span><span style="color: #d0d0d0">);</span>   <span style="color: #999999; font-style: italic">// IE内核:IE6, IE5</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">10</span>     <span style="color: #d0d0d0">}</span> <span style="color: #6ab825; font-weight: bold">else</span> <span style="color: #d0d0d0">{</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">11</span>         <span style="color: #d0d0d0">XHR</span> <span style="color: #d0d0d0">=</span> <span style="color: #6ab825; font-weight: bold">null</span><span style="color: #d0d0d0">;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">12</span>     <span style="color: #d0d0d0">}</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">13</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">14</span>     <span style="color: #999999; font-style: italic">//第二步：发送请求</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">15</span>     <span style="color: #6ab825; font-weight: bold">if</span><span style="color: #d0d0d0">(XHR){</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">16</span>         <span style="color: #d0d0d0">XHR.open(</span><span style="color: #ed9d13">&quot;GET&quot;</span><span style="color: #d0d0d0">,</span> <span style="color: #ed9d13">&quot;/test/ajax&quot;</span><span style="color: #d0d0d0">);</span>  <span style="color: #999999; font-style: italic">//&quot;/test/ajax&quot;test为项目名称、ajax为方法名称</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">17</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">18</span>     <span style="color: #999999; font-style: italic">//第三步：</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">19</span>         <span style="color: #d0d0d0">XHR.onreadystatechange</span> <span style="color: #d0d0d0">=</span> <span style="color: #6ab825; font-weight: bold">function</span> <span style="color: #d0d0d0">()</span> <span style="color: #d0d0d0">{</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">20</span>             <span style="color: #999999; font-style: italic">// readyState值说明  </span><br><span style="background-color: #202020; padding: 0 5px 0 5px">21</span>             <span style="color: #999999; font-style: italic">// 0,初始化,XHR对象已经创建,还未执行open  </span><br><span style="background-color: #202020; padding: 0 5px 0 5px">22</span>             <span style="color: #999999; font-style: italic">// 1,载入,已经调用open方法,但是还没发送请求  </span><br><span style="background-color: #202020; padding: 0 5px 0 5px">23</span>             <span style="color: #999999; font-style: italic">// 2,载入完成,请求已经发送完成  </span><br><span style="background-color: #202020; padding: 0 5px 0 5px">24</span>             <span style="color: #999999; font-style: italic">// 3,交互,可以接收到部分数据,因为相应及http头不全，这时通过responseText获取部分数据会出现错误  </span><br><span style="background-color: #202020; padding: 0 5px 0 5px">25</span>             <span style="color: #999999; font-style: italic">// 4,数据接收完成，此时可以通过responseText获取完整的数据</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">26</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">27</span>             <span style="color: #999999; font-style: italic">// status值说明  </span><br><span style="background-color: #202020; padding: 0 5px 0 5px">28</span>             <span style="color: #999999; font-style: italic">// 200:成功  </span><br><span style="background-color: #202020; padding: 0 5px 0 5px">29</span>             <span style="color: #999999; font-style: italic">// 404:没有发现文件、查询或URl  </span><br><span style="background-color: #202020; padding: 0 5px 0 5px">30</span>             <span style="color: #999999; font-style: italic">// 500:服务器产生内部错误  </span><br><span style="background-color: #202020; padding: 0 5px 0 5px">31</span>             <span style="color: #6ab825; font-weight: bold">if</span> <span style="color: #d0d0d0">(XHR.readyState</span> <span style="color: #d0d0d0">==</span> <span style="color: #3677a9">4</span> <span style="color: #d0d0d0">&amp;&amp;</span> <span style="color: #d0d0d0">XHR.status</span> <span style="color: #d0d0d0">==</span> <span style="color: #3677a9">200</span><span style="color: #d0d0d0">)</span> <span style="color: #d0d0d0">{</span>  <span style="color: #999999; font-style: italic">//注①</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">32</span>                 <span style="color: #999999; font-style: italic">// 这里可以对返回的内容做处理  </span><br><span style="background-color: #202020; padding: 0 5px 0 5px">33</span>                 <span style="color: #999999; font-style: italic">// 一般会返回JSON或XML数据格式  </span><br><span style="background-color: #202020; padding: 0 5px 0 5px">34</span>                 <span style="color: #d0d0d0">console.log(</span><span style="color: #ed9d13">&quot;XHR.responseText–&gt;&quot;</span><span style="color: #d0d0d0">+XHR.responseText);</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">35</span>                 <span style="color: #999999; font-style: italic">// 主动释放,JS本身也会回收的  </span><br><span style="background-color: #202020; padding: 0 5px 0 5px">36</span>                 <span style="color: #d0d0d0">XHR</span> <span style="color: #d0d0d0">=</span> <span style="color: #6ab825; font-weight: bold">null</span><span style="color: #d0d0d0">;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">37</span>             <span style="color: #d0d0d0">}</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">38</span>         <span style="color: #d0d0d0">};</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">39</span>         <span style="color: #d0d0d0">XHR.send();</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">40</span>     <span style="color: #d0d0d0">}</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">41</span> <span style="color: #d0d0d0">}</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">42</span> <span style="color: #6ab825; font-weight: bold">&lt;/script&gt;</span><br></pre></div><br></p>
+        
+          <p class="article-more-link">
+            <a href="/my-blog/2018/09/24/post及get请求区别/#more">浏览更多</a>
+          </p>
+        
+      
+    </div>
+     <footer class="article-footer">      <!--百度分享-->      
+        <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone"></a><a href="#" class="bds_tsina" data-cmd="tsina"></a><a href="#" class="bds_tqq" data-cmd="tqq"></a><a href="#" class="bds_renren" data-cmd="renren"></a><a href="#" class="bds_weixin" data-cmd="weixin"></a></div>
+        <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='https://xserena.github.io/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+     </footer>
+  </div>
+
+
+  
+</article>
+
+
+
+
+  
     <article id="post-CSS居中设置" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/my-blog/2018/09/23/CSS居中设置/" class="article-date">
@@ -402,94 +490,6 @@
 
 
   
-    <article id="post-Hexo-gitment解决篇" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/my-blog/2018/08/21/Hexo-gitment解决篇/" class="article-date">
-  <time datetime="2018-08-21T10:55:04.000Z" itemprop="datePublished">2018-08-21</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/my-blog/2018/08/21/Hexo-gitment解决篇/">Hexo gitment解决篇</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p></p><h2>本来建了基于Hexo+GitHub+Gitment的博客，小编用的landscape主题，但是gitment总出问题，提示Error: Not Found，原来是OAuth Application注册就有问题了，接下来小编就一步一步还原我的解决方案</h2><h3>1. 注册 OAuth Application</h3>
-        
-          <p class="article-more-link">
-            <a href="/my-blog/2018/08/21/Hexo-gitment解决篇/#more">浏览更多</a>
-          </p>
-        
-      
-    </div>
-     <footer class="article-footer">      <!--百度分享-->      
-        <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone"></a><a href="#" class="bds_tsina" data-cmd="tsina"></a><a href="#" class="bds_tqq" data-cmd="tqq"></a><a href="#" class="bds_renren" data-cmd="renren"></a><a href="#" class="bds_weixin" data-cmd="weixin"></a></div>
-        <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='https://xserena.github.io/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
-     </footer>
-  </div>
-
-
-  
-</article>
-
-
-
-
-  
-    <article id="post-微信小程序-豆瓣热映" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/my-blog/2018/08/21/微信小程序-豆瓣热映/" class="article-date">
-  <time datetime="2018-08-21T05:51:43.000Z" itemprop="datePublished">2018-08-21</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/my-blog/2018/08/21/微信小程序-豆瓣热映/">微信小程序-豆瓣热映</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p></p><h2>1.微信公众平台注册账号(不过小编是通过下载微信开发者工具，再使用微信扫描进入的)</h2><p><img src="/my-blog/2018/08/21/微信小程序-豆瓣热映/download.png" alt="安装小程序"></p>
-        
-          <p class="article-more-link">
-            <a href="/my-blog/2018/08/21/微信小程序-豆瓣热映/#more">浏览更多</a>
-          </p>
-        
-      
-    </div>
-     <footer class="article-footer">      <!--百度分享-->      
-        <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone"></a><a href="#" class="bds_tsina" data-cmd="tsina"></a><a href="#" class="bds_tqq" data-cmd="tqq"></a><a href="#" class="bds_renren" data-cmd="renren"></a><a href="#" class="bds_weixin" data-cmd="weixin"></a></div>
-        <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='https://xserena.github.io/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
-     </footer>
-  </div>
-
-
-  
-</article>
-
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -513,7 +513,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/my-blog/archives/2018/09/">2018年09月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/my-blog/archives/2018/08/">2018年08月</a><span class="archive-list-count">8</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/my-blog/archives/2018/09/">2018年09月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/my-blog/archives/2018/08/">2018年08月</a><span class="archive-list-count">8</span></li></ul>
     </div>
   </div>
 
@@ -526,6 +526,14 @@
       <ul>
         
           <li>
+            <a href="/my-blog/2018/09/24/CSS-position属性/">CSS-position属性</a>
+          </li>
+        
+          <li>
+            <a href="/my-blog/2018/09/24/post及get请求区别/">post及get请求区别</a>
+          </li>
+        
+          <li>
             <a href="/my-blog/2018/09/23/CSS居中设置/">CSS居中设置</a>
           </li>
         
@@ -535,14 +543,6 @@
         
           <li>
             <a href="/my-blog/2018/09/02/二千炸鸡店-vueCli/">二千炸鸡店--vueCli</a>
-          </li>
-        
-          <li>
-            <a href="/my-blog/2018/08/29/在线翻译demo-vueCli/">在线翻译demo--vueCli</a>
-          </li>
-        
-          <li>
-            <a href="/my-blog/2018/08/29/vue-cli上传github/">vue-cli上传github</a>
           </li>
         
       </ul>

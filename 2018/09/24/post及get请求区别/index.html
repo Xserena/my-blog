@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>post及get请求区别 | Xserena的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1.ajax-get请求 1 &amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt; 2 function ajax(){ 3     var XHR=null; 4 5     //第一步：创建XMLHttpRequest对象 6     if (window.XMLHttpRequest) { 7         XHR = new XMLHttpReq">
+<meta property="og:type" content="article">
+<meta property="og:title" content="post及get请求区别">
+<meta property="og:url" content="https://xserena.github.io/my-blog/2018/09/24/post及get请求区别/index.html">
+<meta property="og:site_name" content="Xserena的博客">
+<meta property="og:description" content="1.ajax-get请求 1 &amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt; 2 function ajax(){ 3     var XHR=null; 4 5     //第一步：创建XMLHttpRequest对象 6     if (window.XMLHttpRequest) { 7         XHR = new XMLHttpReq">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-09-24T05:19:55.265Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="post及get请求区别">
+<meta name="twitter:description" content="1.ajax-get请求 1 &amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt; 2 function ajax(){ 3     var XHR=null; 4 5     //第一步：创建XMLHttpRequest对象 6     if (window.XMLHttpRequest) { 7         XHR = new XMLHttpReq">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/my-blog/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/my-blog/" id="logo">Xserena的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/my-blog/">主页</a>
+        
+          <a class="main-nav-link" href="/my-blog/archives">分类</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+       
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://xserena.github.io/my-blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-post及get请求区别" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/my-blog/2018/09/24/post及get请求区别/" class="article-date">
+  <time datetime="2018-09-24T04:39:46.000Z" itemprop="datePublished">2018-09-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      post及get请求区别
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p></p><h2>1.ajax-get请求</h2><p><div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span style="background-color: #202020; padding: 0 5px 0 5px"> 1</span> <span style="color: #6ab825; font-weight: bold">&lt;script </span><span style="color: #bbbbbb">type=</span><span style="color: #ed9d13">&quot;text/javascript&quot;</span><span style="color: #6ab825; font-weight: bold">&gt;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px"> 2</span> <span style="color: #6ab825; font-weight: bold">function</span> <span style="color: #d0d0d0">ajax(){</span><br><span style="background-color: #202020; padding: 0 5px 0 5px"> 3</span>     <span style="color: #6ab825; font-weight: bold">var</span> <span style="color: #d0d0d0">XHR=</span><span style="color: #6ab825; font-weight: bold">null</span><span style="color: #d0d0d0">;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px"> 4</span><br><span style="background-color: #202020; padding: 0 5px 0 5px"> 5</span>     <span style="color: #999999; font-style: italic">//第一步：创建XMLHttpRequest对象</span><br><span style="background-color: #202020; padding: 0 5px 0 5px"> 6</span>     <span style="color: #6ab825; font-weight: bold">if</span> <span style="color: #d0d0d0">(</span><span style="color: #24909d">window</span><span style="color: #d0d0d0">.XMLHttpRequest)</span> <span style="color: #d0d0d0">{</span><br><span style="background-color: #202020; padding: 0 5px 0 5px"> 7</span>         <span style="color: #d0d0d0">XHR</span> <span style="color: #d0d0d0">=</span> <span style="color: #6ab825; font-weight: bold">new</span> <span style="color: #d0d0d0">XMLHttpRequest();</span>  <span style="color: #999999; font-style: italic">// 非IE内核:IE7+, Firefox, Chrome, Opera, Safari  </span><br><span style="background-color: #202020; padding: 0 5px 0 5px"> 8</span>     <span style="color: #d0d0d0">}</span> <span style="color: #6ab825; font-weight: bold">else</span> <span style="color: #6ab825; font-weight: bold">if</span> <span style="color: #d0d0d0">(</span><span style="color: #24909d">window</span><span style="color: #d0d0d0">.ActiveXObject)</span> <span style="color: #d0d0d0">{</span><br><span style="background-color: #202020; padding: 0 5px 0 5px"> 9</span>         <span style="color: #d0d0d0">XHR</span> <span style="color: #d0d0d0">=</span> <span style="color: #6ab825; font-weight: bold">new</span> <span style="color: #d0d0d0">ActiveXObject(</span><span style="color: #ed9d13">&quot;Microsoft.XMLHTTP&quot;</span><span style="color: #d0d0d0">);</span>   <span style="color: #999999; font-style: italic">// IE内核:IE6, IE5</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">10</span>     <span style="color: #d0d0d0">}</span> <span style="color: #6ab825; font-weight: bold">else</span> <span style="color: #d0d0d0">{</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">11</span>         <span style="color: #d0d0d0">XHR</span> <span style="color: #d0d0d0">=</span> <span style="color: #6ab825; font-weight: bold">null</span><span style="color: #d0d0d0">;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">12</span>     <span style="color: #d0d0d0">}</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">13</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">14</span>     <span style="color: #999999; font-style: italic">//第二步：发送请求</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">15</span>     <span style="color: #6ab825; font-weight: bold">if</span><span style="color: #d0d0d0">(XHR){</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">16</span>         <span style="color: #d0d0d0">XHR.open(</span><span style="color: #ed9d13">&quot;GET&quot;</span><span style="color: #d0d0d0">,</span> <span style="color: #ed9d13">&quot;/test/ajax&quot;</span><span style="color: #d0d0d0">);</span>  <span style="color: #999999; font-style: italic">//&quot;/test/ajax&quot;test为项目名称、ajax为方法名称</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">17</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">18</span>     <span style="color: #999999; font-style: italic">//第三步：</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">19</span>         <span style="color: #d0d0d0">XHR.onreadystatechange</span> <span style="color: #d0d0d0">=</span> <span style="color: #6ab825; font-weight: bold">function</span> <span style="color: #d0d0d0">()</span> <span style="color: #d0d0d0">{</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">20</span>             <span style="color: #999999; font-style: italic">// readyState值说明  </span><br><span style="background-color: #202020; padding: 0 5px 0 5px">21</span>             <span style="color: #999999; font-style: italic">// 0,初始化,XHR对象已经创建,还未执行open  </span><br><span style="background-color: #202020; padding: 0 5px 0 5px">22</span>             <span style="color: #999999; font-style: italic">// 1,载入,已经调用open方法,但是还没发送请求  </span><br><span style="background-color: #202020; padding: 0 5px 0 5px">23</span>             <span style="color: #999999; font-style: italic">// 2,载入完成,请求已经发送完成  </span><br><span style="background-color: #202020; padding: 0 5px 0 5px">24</span>             <span style="color: #999999; font-style: italic">// 3,交互,可以接收到部分数据,因为相应及http头不全，这时通过responseText获取部分数据会出现错误  </span><br><span style="background-color: #202020; padding: 0 5px 0 5px">25</span>             <span style="color: #999999; font-style: italic">// 4,数据接收完成，此时可以通过responseText获取完整的数据</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">26</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">27</span>             <span style="color: #999999; font-style: italic">// status值说明  </span><br><span style="background-color: #202020; padding: 0 5px 0 5px">28</span>             <span style="color: #999999; font-style: italic">// 200:成功  </span><br><span style="background-color: #202020; padding: 0 5px 0 5px">29</span>             <span style="color: #999999; font-style: italic">// 404:没有发现文件、查询或URl  </span><br><span style="background-color: #202020; padding: 0 5px 0 5px">30</span>             <span style="color: #999999; font-style: italic">// 500:服务器产生内部错误  </span><br><span style="background-color: #202020; padding: 0 5px 0 5px">31</span>             <span style="color: #6ab825; font-weight: bold">if</span> <span style="color: #d0d0d0">(XHR.readyState</span> <span style="color: #d0d0d0">==</span> <span style="color: #3677a9">4</span> <span style="color: #d0d0d0">&amp;&amp;</span> <span style="color: #d0d0d0">XHR.status</span> <span style="color: #d0d0d0">==</span> <span style="color: #3677a9">200</span><span style="color: #d0d0d0">)</span> <span style="color: #d0d0d0">{</span>  <span style="color: #999999; font-style: italic">//注①</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">32</span>                 <span style="color: #999999; font-style: italic">// 这里可以对返回的内容做处理  </span><br><span style="background-color: #202020; padding: 0 5px 0 5px">33</span>                 <span style="color: #999999; font-style: italic">// 一般会返回JSON或XML数据格式  </span><br><span style="background-color: #202020; padding: 0 5px 0 5px">34</span>                 <span style="color: #d0d0d0">console.log(</span><span style="color: #ed9d13">&quot;XHR.responseText–&gt;&quot;</span><span style="color: #d0d0d0">+XHR.responseText);</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">35</span>                 <span style="color: #999999; font-style: italic">// 主动释放,JS本身也会回收的  </span><br><span style="background-color: #202020; padding: 0 5px 0 5px">36</span>                 <span style="color: #d0d0d0">XHR</span> <span style="color: #d0d0d0">=</span> <span style="color: #6ab825; font-weight: bold">null</span><span style="color: #d0d0d0">;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">37</span>             <span style="color: #d0d0d0">}</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">38</span>         <span style="color: #d0d0d0">};</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">39</span>         <span style="color: #d0d0d0">XHR.send();</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">40</span>     <span style="color: #d0d0d0">}</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">41</span> <span style="color: #d0d0d0">}</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">42</span> <span style="color: #6ab825; font-weight: bold">&lt;/script&gt;</span><br></pre></div><br></p><a id="more"></a><h2>2.ajax-post请求</h2><p><div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span style="background-color: #202020; padding: 0 5px 0 5px"> 1</span> <span style="color: #6ab825; font-weight: bold">&lt;script </span><span style="color: #bbbbbb">type=</span><span style="color: #ed9d13">&quot;text/javascript&quot;</span><span style="color: #6ab825; font-weight: bold">&gt;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px"> 2</span> <span style="color: #6ab825; font-weight: bold">function</span> <span style="color: #d0d0d0">ajax(){</span><br><span style="background-color: #202020; padding: 0 5px 0 5px"> 3</span>     <span style="color: #6ab825; font-weight: bold">var</span> <span style="color: #d0d0d0">XHR=</span><span style="color: #6ab825; font-weight: bold">null</span><span style="color: #d0d0d0">;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px"> 4</span><br><span style="background-color: #202020; padding: 0 5px 0 5px"> 5</span>     <span style="color: #999999; font-style: italic">//第一步：创建XMLHttpRequest对象</span><br><span style="background-color: #202020; padding: 0 5px 0 5px"> 6</span>     <span style="color: #6ab825; font-weight: bold">if</span> <span style="color: #d0d0d0">(</span><span style="color: #24909d">window</span><span style="color: #d0d0d0">.XMLHttpRequest)</span> <span style="color: #d0d0d0">{</span><br><span style="background-color: #202020; padding: 0 5px 0 5px"> 7</span>         <span style="color: #d0d0d0">XHR</span> <span style="color: #d0d0d0">=</span> <span style="color: #6ab825; font-weight: bold">new</span> <span style="color: #d0d0d0">XMLHttpRequest();</span>  <span style="color: #999999; font-style: italic">// 非IE内核:IE7+, Firefox, Chrome, Opera, Safari  </span><br><span style="background-color: #202020; padding: 0 5px 0 5px"> 8</span>     <span style="color: #d0d0d0">}</span> <span style="color: #6ab825; font-weight: bold">else</span> <span style="color: #6ab825; font-weight: bold">if</span> <span style="color: #d0d0d0">(</span><span style="color: #24909d">window</span><span style="color: #d0d0d0">.ActiveXObject)</span> <span style="color: #d0d0d0">{</span><br><span style="background-color: #202020; padding: 0 5px 0 5px"> 9</span>         <span style="color: #d0d0d0">XHR</span> <span style="color: #d0d0d0">=</span> <span style="color: #6ab825; font-weight: bold">new</span> <span style="color: #d0d0d0">ActiveXObject(</span><span style="color: #ed9d13">&quot;Microsoft.XMLHTTP&quot;</span><span style="color: #d0d0d0">);</span>   <span style="color: #999999; font-style: italic">// IE内核:IE6, IE5</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">10</span>     <span style="color: #d0d0d0">}</span> <span style="color: #6ab825; font-weight: bold">else</span> <span style="color: #d0d0d0">{</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">11</span>         <span style="color: #d0d0d0">XHR</span> <span style="color: #d0d0d0">=</span> <span style="color: #6ab825; font-weight: bold">null</span><span style="color: #d0d0d0">;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">12</span>     <span style="color: #d0d0d0">}</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">13</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">14</span>     <span style="color: #999999; font-style: italic">//第二步：发送请求</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">15</span>     <span style="color: #6ab825; font-weight: bold">if</span><span style="color: #d0d0d0">(XHR){</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">16</span>         <span style="color: #d0d0d0">XHR.open(</span><span style="color: #ed9d13">&quot;POST&quot;</span><span style="color: #d0d0d0">,</span> <span style="color: #ed9d13">&#39;1.php?=&#39;</span><span style="color: #d0d0d0">+</span><span style="color: #24909d">Math</span><span style="color: #d0d0d0">.random(),</span><span style="color: #6ab825; font-weight: bold">true</span><span style="color: #d0d0d0">);</span>  <span style="color: #999999; font-style: italic">//&quot;/test/ajax&quot;test为项目名称、ajax为方法名称</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">17</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">18</span>         <span style="color: #999999; font-style: italic">//第三步：设置Content-Type</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">19</span>          <span style="color: #d0d0d0">XHR.setRequestHeader(</span><span style="color: #ed9d13">&quot;Content-type&quot;</span><span style="color: #d0d0d0">,</span><span style="color: #ed9d13">&quot;application/x-www-form-urlencoded&quot;</span><span style="color: #d0d0d0">);</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">20</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">21</span>         <span style="color: #999999; font-style: italic">//第四步：</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">22</span>         <span style="color: #d0d0d0">XHR.onreadystatechange</span> <span style="color: #d0d0d0">=</span> <span style="color: #6ab825; font-weight: bold">function</span> <span style="color: #d0d0d0">()</span> <span style="color: #d0d0d0">{</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">23</span>             <span style="color: #999999; font-style: italic">// readyState值说明  </span><br><span style="background-color: #202020; padding: 0 5px 0 5px">24</span>             <span style="color: #999999; font-style: italic">// 0,初始化,XHR对象已经创建,还未执行open  </span><br><span style="background-color: #202020; padding: 0 5px 0 5px">25</span>             <span style="color: #999999; font-style: italic">// 1,载入,已经调用open方法,但是还没发送请求  </span><br><span style="background-color: #202020; padding: 0 5px 0 5px">26</span>             <span style="color: #999999; font-style: italic">// 2,载入完成,请求已经发送完成  </span><br><span style="background-color: #202020; padding: 0 5px 0 5px">27</span>             <span style="color: #999999; font-style: italic">// 3,交互,可以接收到部分数据,因为相应及http头不全，这时通过responseText获取部分数据会出现错误  </span><br><span style="background-color: #202020; padding: 0 5px 0 5px">28</span>             <span style="color: #999999; font-style: italic">// 4,数据接收完成，此时可以通过responseText获取完整的数据</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">29</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">30</span>             <span style="color: #999999; font-style: italic">// status值说明  </span><br><span style="background-color: #202020; padding: 0 5px 0 5px">31</span>             <span style="color: #999999; font-style: italic">// 200:成功  </span><br><span style="background-color: #202020; padding: 0 5px 0 5px">32</span>             <span style="color: #999999; font-style: italic">// 404:没有发现文件、查询或URl  </span><br><span style="background-color: #202020; padding: 0 5px 0 5px">33</span>             <span style="color: #999999; font-style: italic">// 500:服务器产生内部错误  </span><br><span style="background-color: #202020; padding: 0 5px 0 5px">34</span>             <span style="color: #6ab825; font-weight: bold">if</span> <span style="color: #d0d0d0">(XHR.readyState</span> <span style="color: #d0d0d0">==</span> <span style="color: #3677a9">4</span> <span style="color: #d0d0d0">&amp;&amp;</span> <span style="color: #d0d0d0">XHR.status</span> <span style="color: #d0d0d0">==</span> <span style="color: #3677a9">200</span><span style="color: #d0d0d0">)</span> <span style="color: #d0d0d0">{</span>  <span style="color: #999999; font-style: italic">//注①</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">35</span>                 <span style="color: #999999; font-style: italic">// 这里可以对返回的内容做处理  </span><br><span style="background-color: #202020; padding: 0 5px 0 5px">36</span>                 <span style="color: #999999; font-style: italic">// 一般会返回JSON或XML数据格式  </span><br><span style="background-color: #202020; padding: 0 5px 0 5px">37</span>                 <span style="color: #d0d0d0">console.log(</span><span style="color: #ed9d13">&quot;XHR.responseText–&gt;&quot;</span><span style="color: #d0d0d0">+XHR.responseText);</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">38</span>                 <span style="color: #999999; font-style: italic">// 主动释放,JS本身也会回收的  </span><br><span style="background-color: #202020; padding: 0 5px 0 5px">39</span>                 <span style="color: #d0d0d0">XHR</span> <span style="color: #d0d0d0">=</span> <span style="color: #6ab825; font-weight: bold">null</span><span style="color: #d0d0d0">;</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">40</span>             <span style="color: #d0d0d0">}</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">41</span>         <span style="color: #d0d0d0">};</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">42</span>         <span style="color: #d0d0d0">XHR.send(</span><span style="color: #ed9d13">&#39;name=mino&amp;age=25&#39;</span><span style="color: #d0d0d0">);</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">43</span>     <span style="color: #d0d0d0">}</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">44</span> <span style="color: #d0d0d0">}</span><br><span style="background-color: #202020; padding: 0 5px 0 5px">45</span> <span style="color: #6ab825; font-weight: bold">&lt;/script&gt;</span><br></pre></div><br></p><h3>get和post请求的区别</h3><h3><ol><li>使用Get请求时,参数在URL中显示,而使用Post请求,则不会显示出来；</li><li>post请求必须设置xhr.setRequestHeader( “Content-Type”, “application/x-www-form-urlencoded” ); 否则服务器端收不到参数</li><li>Post传输的数据量大，可以达到2M，而Get方法由于受到URL长度的限制,只能传递大约1024字节</li><li>Get请求请求需注意缓存问题,Post请求不需担心这个问题； </li></ol></h3><p></p>
+
+      
+    </div>
+     <footer class="article-footer">      <!--百度分享-->      
+        <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone"></a><a href="#" class="bds_tsina" data-cmd="tsina"></a><a href="#" class="bds_tqq" data-cmd="tqq"></a><a href="#" class="bds_renren" data-cmd="renren"></a><a href="#" class="bds_weixin" data-cmd="weixin"></a></div>
+        <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='https://xserena.github.io/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+     </footer>
+  </div>
+
+
+  
+  
+   
+  <div id="git"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: 'Mon Sep 24 2018 12:39:46 GMT+0800',
+  owner: "Xserena",
+  repo: "xserena.github.io",
+  oauth: {
+    client_id: "73749fd90cf36c53f189",
+    client_secret:"6239c81efc5aadd894353253c450fa3bea90fb29",
+  },
+})
+gitment.render('git')
+</script>
+
+  
+
+    
+<nav id="article-nav">
+  
+    <a href="/my-blog/2018/09/24/CSS-position属性/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          CSS-position属性
+        
+      </div>
+    </a>
+  
+  
+    <a href="/my-blog/2018/09/23/CSS居中设置/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">CSS居中设置</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/my-blog/archives/2018/09/">2018年09月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/my-blog/archives/2018/08/">2018年08月</a><span class="archive-list-count">8</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最近发布</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/my-blog/2018/09/24/CSS-position属性/">CSS-position属性</a>
+          </li>
+        
+          <li>
+            <a href="/my-blog/2018/09/24/post及get请求区别/">post及get请求区别</a>
+          </li>
+        
+          <li>
+            <a href="/my-blog/2018/09/23/CSS居中设置/">CSS居中设置</a>
+          </li>
+        
+          <li>
+            <a href="/my-blog/2018/09/23/CSS清除浮动/">CSS清除浮动</a>
+          </li>
+        
+          <li>
+            <a href="/my-blog/2018/09/02/二千炸鸡店-vueCli/">二千炸鸡店--vueCli</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Xserena<br>
+      Powered by <a href="https://xserena.github.io/my-blog/" target="_blank">Xserena-blog</a>
+      <span id="busuanzi_container_site_uv"> 
+	  本站访客数<span id="busuanzi_value_site_uv" style="color:red"></span>人次
+	</span>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/my-blog/" class="mobile-nav-link">主页</a>
+  
+    <a href="/my-blog/archives" class="mobile-nav-link">分类</a>
+  
+</nav>
+    
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof jQuery == 'undefined') {
+document.write(unescape("%3Cscript src='/js/jquery-2.0.3.min.js' type='text/javascript'%3E%3C/script%3E"));
+}
+// ]]>
+</script>
+
+
+  <link rel="stylesheet" href="/my-blog/fancybox/jquery.fancybox.css">
+  <script src="/my-blog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/my-blog/js/script.js"></script>
+
+
+
+<div id="totop">
+  <a title="javascript:;">返回<br>顶部</a>
+</div>
+<script src="/my-blog/js/totop.js"></script>
+
+  </div>
+</body>
+</html>
